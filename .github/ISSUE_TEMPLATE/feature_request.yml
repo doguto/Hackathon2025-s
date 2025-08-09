@@ -4,11 +4,6 @@ title: "[FEATURE] "
 labels: ["enhancement", "feature"]
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        新機能のリクエストをありがとうございます！以下の項目を記入してください。
-
   - type: textarea
     id: summary
     attributes:

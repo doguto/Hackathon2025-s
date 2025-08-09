@@ -4,11 +4,6 @@ title: "[REFACTOR] "
 labels: ["refactor", "technical-debt"]
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        リファクタリングの提案をありがとうございます！コード品質の向上に役立てるため、以下の項目を記入してください。
-
   - type: textarea
     id: target
     attributes:

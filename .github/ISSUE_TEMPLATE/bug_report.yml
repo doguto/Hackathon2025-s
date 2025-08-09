@@ -4,11 +4,6 @@ title: "[BUG] "
 labels: ["bug", "needs-triage"]
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        バグレポートをありがとうございます！問題の解決に役立てるため、以下の項目を記入してください。
-
   - type: textarea
     id: description
     attributes:
