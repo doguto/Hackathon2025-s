@@ -7,7 +7,7 @@ Winc2025夏季ハッカソン用リポジトリ
 
 ## UsedTech
 * C#
-* Unity (2022.3.35f1)
+* Unity (2022.3.40f1)
 * UniRx
 * UniTask
 * DOTween
