@@ -24,8 +24,8 @@ body:
     id: solution
     attributes:
       label: 修正方法
-      description: バグの修正方法を説明してください
-      placeholder: 修正するための方法を記述してください
+      description: 可能であればバグの修正方法を説明してください
+      placeholder: 可能であれば修正するための方法を記述してください
 
   - type: textarea
     id: additional
