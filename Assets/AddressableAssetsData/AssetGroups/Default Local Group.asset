@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Default Local Group
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
-  m_Data:
-    m_SerializedData: []
   m_GUID: b2289d3f81dde5f468380bb2106aeb75
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 5e52ac6479ae558409e7d54cead26f14
+    m_Address: Assets/Project/Textures/image/setting_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: de240910825cd6746a8e961414410f0d, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: cf8c2fd6eb38f0244ab549c303406fc3, type: 2}
     - {fileID: 11400000, guid: 398f5a6ba658cd548b3b405950c8565a, type: 2}
+    - {fileID: 11400000, guid: cf8c2fd6eb38f0244ab549c303406fc3, type: 2}
