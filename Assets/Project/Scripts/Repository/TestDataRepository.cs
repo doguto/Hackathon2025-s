@@ -20,7 +20,7 @@ namespace Project.Scripts.Repository
             MessagePackSerializer.DefaultOptions = options;
 
             var fileName = "TestData.bytes";
-            var path = Path.Combine(bynaryDirectoryPath, fileName);
+            var path = Path.Combine(BinaryDirectoryPath, fileName);
             var asset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
             var binary = asset.bytes;
 
