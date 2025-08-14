@@ -15,8 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: b2289d3f81dde5f468380bb2106aeb75
   m_SerializeEntries:
+  - m_GUID: 3302f0f334cfbf94fa9047371799ad11
+    m_Address: Assets/Project/DataStore/Binary/MasterData.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5e52ac6479ae558409e7d54cead26f14
     m_Address: Assets/Project/Textures/image/setting_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82fadf21dfd86834e9b4423afad2ccd2
+    m_Address: Assets/Project/DataStore/Binary/UserData.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f85b1c6e19890d2458dc9c02d1c61e11
+    m_Address: Assets/Project/DataStore/Binary/TestData.bytes
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

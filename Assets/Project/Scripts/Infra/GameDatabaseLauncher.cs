@@ -1,9 +1,11 @@
 ﻿using System.IO;
+using Cysharp.Threading.Tasks;
 using MasterMemory;
 using MessagePack;
 using MessagePack.Resolvers;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Project.Scripts.Infra
 {
@@ -36,14 +38,14 @@ namespace Project.Scripts.Infra
 
         MemoryDatabase CreateMasterDatabase()
         {
-            var masterBinaryAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(MasterDataBinaryPath);
+            var masterBinaryAsset = Addressables.LoadAssetAsync<TextAsset>(MasterDataBinaryPath).WaitForCompletion();
             var masterBinary = masterBinaryAsset.bytes;
             return new MemoryDatabase(masterBinary);
         }
 
         MemoryDatabase CreateUserDatabase()
         {
-            var userBinaryAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(UserDataBinaryPath);
+            var userBinaryAsset = Addressables.LoadAssetAsync<TextAsset>(UserDataBinaryPath).WaitForCompletion();
             var userBinary = userBinaryAsset.bytes;
             return new MemoryDatabase(userBinary);
         }

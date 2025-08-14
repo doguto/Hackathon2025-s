@@ -4,6 +4,7 @@ using MessagePack;
 using MessagePack.Resolvers;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Project.Scripts.Repository
 {
@@ -21,7 +22,7 @@ namespace Project.Scripts.Repository
 
             var fileName = "TestData.bytes";
             var path = Path.Combine(BinaryDirectoryPath, fileName);
-            var asset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
+            var asset = Addressables.LoadAssetAsync<TextAsset>(path).WaitForCompletion();
             var binary = asset.bytes;
 
             var memoryDatabase = new MemoryDatabase(binary);
