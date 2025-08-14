@@ -3,6 +3,7 @@ using System.Linq;
 using MasterMemory;
 using MessagePack;
 using MessagePack.Resolvers;
+using Project.Scripts.Infra;
 using Project.Scripts.Repository.Schema;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Project.Editor.MasterMemory
     {
         const string testDataPath = "Assets/Project/DataStore/TestData/Test.json";
         
-        [MenuItem("Tools/MasterMemory/GenerateBinaryTest")]
+        [MenuItem("Tools/MasterMemory/Test/GenerateTestBinary")]
         static void Execute()
         {
             // MessagePackの初期化
