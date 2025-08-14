@@ -41,7 +41,7 @@ namespace Project.Editor
         void CreateAssemblyReferences()
         {
             const string scriptsBasePath = "Assets/Project/Scenes";
-            string[] asmdefNames = { "Model", "Presenter", "View" };
+            string[] asmdefNames = { "Model", "Presenter", "View", "Repository" };
 
             var scenePath = Path.Combine(scriptsBasePath, sceneName);
             var creatingScriptsPath = Path.Combine(scenePath, "Scripts");

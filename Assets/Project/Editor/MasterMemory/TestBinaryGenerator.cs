@@ -1,16 +1,19 @@
 using System.IO;
+using System.Linq;
 using MasterMemory;
 using MessagePack;
 using MessagePack.Resolvers;
 using Project.Scripts.Repository.Schema;
 using UnityEditor;
-using Path = System.IO.Path;
+using UnityEngine;
 
 namespace Project.Editor.MasterMemory
 {
     public static class TestBinaryGenerator
     {
-        [MenuItem("Tools/MasterMemory/GenerateBinaryTest")]
+        const string testDataPath = "Assets/Project/DataStore/TestData/Test.json";
+        
+        [MenuItem("Tools/MasterMemory/Test/GenerateTestBinary")]
         static void Execute()
         {
             // MessagePackの初期化
@@ -20,19 +23,16 @@ namespace Project.Editor.MasterMemory
             );
             var options = MessagePackSerializerOptions.Standard.WithResolver(messagePackResolver);
             MessagePackSerializer.DefaultOptions = options;
-
+            
             // 本来はCsv等からのインポート処理を記述
-            var testData = new[]
-            {
-                new TestSchema(1, "Test1"),
-                new TestSchema(2, "Test2"),
-                new TestSchema(3, "Test3"),
-                new TestSchema(4, "Test4"),
-                new TestSchema(5, "Test5"),
-            };
+            var streamReader = new StreamReader(testDataPath);
+            var json = streamReader.ReadToEnd();
+            streamReader.Close();
+
+            var testData = JsonUtility.FromJson<TestData>(json);
 
             DatabaseBuilder dataBuilder = new();
-            dataBuilder.Append(testData);
+            dataBuilder.Append(testData.tests.Select(x => x.ToSchema()));
             var binaryData = dataBuilder.Build();
 
             var path = "Assets/Project/DataStore/Binary/TestData.bytes";

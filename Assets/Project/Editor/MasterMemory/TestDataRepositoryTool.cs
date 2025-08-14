@@ -5,7 +5,7 @@ namespace Project.Editor.MasterMemory
 {
     public static class TestDataRepositoryTool
     {
-        [MenuItem("Tools/MasterMemory/DataRepositoryTest")]
+        [MenuItem("Tools/MasterMemory/Test/TestDataRepository")]
         static void LoadData()
         {
             var testDataRepository = new TestDataRepository();
