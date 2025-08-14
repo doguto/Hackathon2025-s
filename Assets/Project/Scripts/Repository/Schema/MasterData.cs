@@ -2,6 +2,6 @@
 {
     public class MasterData
     {
-        public TestSchema[] TestSchema { get; }
+        public TestSchema[] TestSchema { get; set; }
     }
 }
