@@ -1,10 +1,8 @@
-﻿using UnityEngine.Serialization;
-
-namespace Project.Scripts.Repository.Schema
+﻿namespace Project.Scripts.Repository.Schema
 {
     [System.Serializable]
     public class TestData
     {
-        public Test[] tests;
+        public TestMiddleSchema[] tests;
     }
 }

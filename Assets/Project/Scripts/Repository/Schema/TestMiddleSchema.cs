@@ -1,7 +1,7 @@
 ﻿namespace Project.Scripts.Repository.Schema
 {
     [System.Serializable]
-    public class Test
+    public class TestMiddleSchema
     {
         public int id;
         public string name;
