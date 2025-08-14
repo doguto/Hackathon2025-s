@@ -1,5 +1,4 @@
 ﻿using Project.Scripts.Infra;
-using Project.Scripts.Repository.Schema;
 using UnityEditor;
 
 namespace Project.Editor.MasterMemory

@@ -3,7 +3,6 @@ using System.Linq;
 using MasterMemory;
 using MessagePack;
 using MessagePack.Resolvers;
-using Project.Scripts.Infra;
 using Project.Scripts.Repository.Schema;
 using UnityEditor;
 using UnityEngine;
