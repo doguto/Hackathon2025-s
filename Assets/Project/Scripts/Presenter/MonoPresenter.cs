@@ -7,7 +7,10 @@ namespace Project.Scripts.Presenter
         protected virtual void Awake()
         {
             Init();
+
+#if UNITY_EDITOR
             Debug.Log($"Initialized {name}", this);
+#endif
         }
         
         protected abstract void Init();
