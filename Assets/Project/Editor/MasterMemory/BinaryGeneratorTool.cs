@@ -10,14 +10,9 @@ namespace Project.Editor.MasterMemory
         static void GenerateMasterBinary()
         {
             var generator = new MasterBinaryGenerator();
+            IMasterDataFactory factory = new TestMasterDataFactory();
             
-            // TODO: MasterDataの構築をクラスとして切り出す
-            var masterData = new MasterData();
-            masterData.TestSchema = new[]
-            {
-                new TestSchema() { Id = 1, Name = "Test1" }
-            };
-            
+            var masterData = factory.Create();
             generator.Generate(masterData);
         }
     }
