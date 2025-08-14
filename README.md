@@ -7,11 +7,13 @@ Winc2025夏季ハッカソン用リポジトリ
 
 ## UsedTech
 * C#
-* Unity (6000.0.23f1)
+* Unity (2022.3.62f1)
 * UniRx
 * UniTask
 * DOTween
 * Addressable
+* MasterMemory
+* MessagePack
 
 ## Architecture
 
@@ -24,6 +26,7 @@ Winc2025夏季ハッカソン用リポジトリ
 │   ├── AddressableAssetsData/ # Addressableアセットの設定データ
 │   ├── Plugins/              # サードパーティプラグイン
 │   ├── Project/              # プロジェクト固有のアセット
+│   │   ├── DataStore/        # データストレージ (MasterMemory用バイナリデータ等)
 │   │   ├── Editor/           # エディタ拡張スクリプト
 │   │   ├── Scenes/           # ゲームシーン
 │   │   ├── Scripts/          # C#スクリプト
