@@ -7,7 +7,7 @@ namespace Project.Scenes.Global.Scripts.Presenter
     public class GlobalScenePresenter : MonoPresenter
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        protected static void Initialize()
+        protected static void InitializeGameData()
         {
             var sceneModel = new GlobalSceneModel();
 #if UNITY_EDITOR
