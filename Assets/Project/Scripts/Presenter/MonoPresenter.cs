@@ -1,3 +1,4 @@
+using UniRx;
 using UnityEngine;
 
 namespace Project.Scripts.Presenter
@@ -6,13 +7,17 @@ namespace Project.Scripts.Presenter
     {
         protected virtual void Awake()
         {
-            Init();
-
+            SetupModel();
+            SetupView();
+            SubscribeView();
+            
 #if UNITY_EDITOR
             Debug.Log($"Initialized {name}", this);
 #endif
         }
-        
-        protected abstract void Init();
+
+        protected abstract void SetupModel();
+        protected abstract void SetupView();
+        protected abstract void SubscribeView();
     }
 }

@@ -6,8 +6,6 @@ namespace Project.Scenes.Global.Scripts.Presenter
 {
     public class GlobalScenePresenter : MonoPresenter
     {
-        protected override void Init() { }
-
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         protected static void Initialize()
         {
@@ -16,5 +14,11 @@ namespace Project.Scenes.Global.Scripts.Presenter
             Debug.Log("Initializes GlobalScenePresenter");
 #endif
         }
+
+        protected override void SetupModel() { }
+
+        protected override void SetupView() { }
+
+        protected override void SubscribeView() { }
     }
 }

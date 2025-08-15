@@ -8,13 +8,23 @@ namespace Project.Scenes.Sample.Scripts.Presenter
     public class SampleScenePresenter : MonoPresenter
     {
         [SerializeField] TestObjectView testObjectView;
+        
+        SampleTestDataModel sampleTestDataModel;
+        
 
-        protected override void Init()
+        protected override void SetupModel()
         {
-            var sceneModel = new SampleSceneModel();
+            sampleTestDataModel = new SampleTestDataModel();
+        }
 
+        protected override void SetupView()
+        {
             testObjectView.Init();
-            testObjectView.Setup(sceneModel.Id, sceneModel.Name);
+        }
+
+        protected override void SubscribeView()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
