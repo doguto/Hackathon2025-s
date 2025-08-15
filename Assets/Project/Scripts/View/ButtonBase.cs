@@ -21,5 +21,10 @@ namespace Project.Scripts.View
             OnClick();
             onClicked.OnNext(Unit.Default);
         }
+
+        void OnDestroy()
+        {
+            onClicked.Dispose();
+        }
     }
 }
