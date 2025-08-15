@@ -2,17 +2,17 @@
 
 namespace Project.Scenes.Sample.Scripts.Model
 {
-    public class SampleSceneModel
+    public class SampleTestDataModel
     {
         public int Id { get; private set; }
         public string Name { get; private set; }
         
-        public SampleSceneModel()
+        public SampleTestDataModel()
         {
-            var sceneRepository = new SampleSceneRepository();
+            var testDataRepository = new SampleTestDataRepository();
 
-            Id = sceneRepository.Id;
-            Name = sceneRepository.Name;
+            Id = testDataRepository.Id;
+            Name = testDataRepository.Name;
         }
     }
 }

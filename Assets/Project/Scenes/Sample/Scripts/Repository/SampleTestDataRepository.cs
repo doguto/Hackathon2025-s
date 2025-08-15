@@ -2,12 +2,12 @@
 
 namespace Project.Scenes.Sample.Scripts.Repository
 {
-    public class SampleSceneRepository
+    public class SampleTestDataRepository
     {
         public int Id { get; }
         public string Name { get; }
         
-        public SampleSceneRepository()
+        public SampleTestDataRepository()
         {
             var testSchema = GameDatabase.MasterDatabase.TestSchemaTable.FindById(1);
 
