@@ -1,9 +1,6 @@
-﻿using System.IO;
-using Cysharp.Threading.Tasks;
-using MasterMemory;
+﻿using MasterMemory;
 using MessagePack;
 using MessagePack.Resolvers;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -29,25 +26,18 @@ namespace Project.Scripts.Infra
             var options = MessagePackSerializerOptions.Standard.WithResolver(messagePackResolvers);
             MessagePackSerializer.DefaultOptions = options;
 
-            var masterDatabase = CreateMasterDatabase();
-            var userDatabase = CreateUserDatabase();
+            var masterDatabase = CreateDatabase(MasterDataBinaryPath);
+            var userDatabase = CreateDatabase(UserDataBinaryPath);
             
             // GameDatabaseの初期化
             GameDatabase.SetDatabase(masterDatabase, userDatabase);
         }
 
-        MemoryDatabase CreateMasterDatabase()
+        MemoryDatabase CreateDatabase(string binaryPath)
         {
-            var masterBinaryAsset = Addressables.LoadAssetAsync<TextAsset>(MasterDataBinaryPath).WaitForCompletion();
-            var masterBinary = masterBinaryAsset.bytes;
-            return new MemoryDatabase(masterBinary);
-        }
-
-        MemoryDatabase CreateUserDatabase()
-        {
-            var userBinaryAsset = Addressables.LoadAssetAsync<TextAsset>(UserDataBinaryPath).WaitForCompletion();
-            var userBinary = userBinaryAsset.bytes;
-            return new MemoryDatabase(userBinary);
+            var binaryAsset = Addressables.LoadAssetAsync<TextAsset>(binaryPath).WaitForCompletion();
+            var binary = binaryAsset.bytes;
+            return new MemoryDatabase(binary);
         }
     }
 }
