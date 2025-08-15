@@ -1,12 +1,14 @@
 ﻿using Project.Scenes.Sample.Scripts.Model;
 using Project.Scenes.Sample.Scripts.View;
 using Project.Scripts.Presenter;
+using UniRx;
 using UnityEngine;
 
 namespace Project.Scenes.Sample.Scripts.Presenter
 {
     public class SampleScenePresenter : MonoPresenter
     {
+        [SerializeField] SampleSceneView sampleSceneView;
         [SerializeField] TestObjectView testObjectView;
         
         SampleTestDataModel sampleTestDataModel;
@@ -24,7 +26,12 @@ namespace Project.Scenes.Sample.Scripts.Presenter
 
         protected override void SubscribeView()
         {
-            throw new System.NotImplementedException();
+            sampleSceneView.OnLoadTestData.Subscribe(SetupTestData);
+        }
+
+        void SetupTestData(Unit _)
+        {
+            testObjectView.Setup(sampleTestDataModel.Id, sampleTestDataModel.Name);   
         }
     }
 }
