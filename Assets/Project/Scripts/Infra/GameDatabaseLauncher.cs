@@ -16,8 +16,8 @@ namespace Project.Scripts.Infra
         const string MasterDataBinaryName = "MasterData.bytes";
         const string UserDataBinaryName = "UserData.bytes";
         
-        string MasterDataBinaryPath => Path.Combine(BinaryDirectoryPath, MasterDataBinaryName);
-        string UserDataBinaryPath => Path.Combine(BinaryDirectoryPath, UserDataBinaryName);
+        string MasterDataBinaryPath => $"{BinaryDirectoryPath}/{MasterDataBinaryName}";
+        string UserDataBinaryPath => $"{BinaryDirectoryPath}/{UserDataBinaryName}";
         
         public void Launch()
         {
