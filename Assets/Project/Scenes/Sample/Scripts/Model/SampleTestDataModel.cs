@@ -1,4 +1,4 @@
-﻿using Project.Scripts.Model;
+using Project.Scripts.Model;
 
 namespace Project.Scenes.Sample.Scripts.Model
 {

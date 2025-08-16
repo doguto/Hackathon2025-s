@@ -1,0 +1,6 @@
+# CODEOWNERS file for Hackathon2025-s
+# This file defines who is responsible for reviewing changes to specific files or directories
+
+# Assembly Definition Files (.asmdef) require review from @doguto
+# These files control library dependencies and should not be modified without careful consideration
+*.asmdef    @doguto
