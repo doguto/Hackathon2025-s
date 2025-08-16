@@ -38,7 +38,6 @@ sequenceDiagram
     participant SampleSceneView
     participant SampleScenePresenter
     participant SampleTestDataModel
-    participant SampleTestDataRepository
     participant GameDatabase
     participant TestObjectView
     
@@ -49,10 +48,8 @@ sequenceDiagram
     
     Note over SampleScenePresenter: Presenterが処理を開始
     SampleScenePresenter->>+SampleTestDataModel: データ取得要求
-    SampleTestDataModel->>+SampleTestDataRepository: データ要求
-    SampleTestDataRepository->>GameDatabase: FindById(1)
-    GameDatabase-->>SampleTestDataRepository: TestSchema
-    SampleTestDataRepository-->>-SampleTestDataModel: Id, Name
+    SampleTestDataModel->>GameDatabase: FindById(1)
+    GameDatabase-->>SampleTestDataModel: TestSchema
     SampleTestDataModel-->>-SampleScenePresenter: テストデータ
     
     Note over SampleScenePresenter: Viewを更新
@@ -138,27 +135,15 @@ public class SampleScenePresenter : MonoPresenter
 
 #### SampleTestDataModel
 ```csharp
-public class SampleTestDataModel
+public class SampleTestDataModel : ModelBase
 {
     public int Id { get; private set; }
     public string Name { get; private set; }
-}
-```
-
-**役割**:
-- ビジネスデータの保持
-- データの整合性保証
-- Repositoryからのデータ取得
-
-### 4. Repository層
-
-#### SampleTestDataRepository
-```csharp
-public class SampleTestDataRepository
-{
-    public SampleTestDataRepository()
+    
+    public SampleTestDataModel()
     {
-        var testSchema = GameDatabase.MasterDatabase.TestSchemaTable.FindById(1);
+        var testSchema = masterDataRepository.Database.TestSchemaTable.FindById(1);
+        
         Id = testSchema.Id;
         Name = testSchema.Name;
     }
@@ -166,9 +151,11 @@ public class SampleTestDataRepository
 ```
 
 **役割**:
-- データアクセス層
-- データベースからのデータ取得
-- データの変換・整形
+- ビジネスデータの保持と管理
+- データの整合性保証
+- GameDatabaseからの直接データ取得
+- ModelBaseで提供されるmasterDataRepositoryを使用
+
 
 ## 実際の動作手順
 

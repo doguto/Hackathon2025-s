@@ -8,9 +8,12 @@ using UnityEngine.AddressableAssets;
 
 namespace Project.Scripts.Repository
 {
-    public class TestDataRepository : DataRepository
+    public class TestDataRepository
     {
-        public override void Load()
+        const string DataStorePath = "Assets/Project/DataStore";
+        const string BinaryDirectoryPath = "Assets/Project/DataStore/Binary";
+        
+        public void Load()
         {
             // MessagePackの初期化
             var messagePackResolvers = CompositeResolver.Create(
