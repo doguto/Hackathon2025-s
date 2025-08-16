@@ -3,8 +3,8 @@ using Project.Scripts.Infra;
 
 namespace Project.Scripts.Repository
 {
-    public class MasterDataRepository : DataRepository
+    public class MasterDataRepository : IDataRepository
     {
-        public override MemoryDatabase Database => GameDatabase.MasterDatabase;
+        public MemoryDatabase Database => GameDatabase.MasterDatabase;
     }
 }
